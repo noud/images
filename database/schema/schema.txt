@@ -281,14 +281,37 @@
                 }
             },
             {
-                "id": "zrq5fn",
-                "name": "time",
-                "type": "boolean",
+                "id": "6p20hs",
+                "name": "filename_extension_id",
+                "type": "integer",
                 "length": "",
                 "defValue": "",
                 "comment": "",
                 "autoInc": false,
-                "nullable": true,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "2o7nu",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "u8m7lb",
+                        "name": "extensions"
+                    }
+                }
+            },
+            {
+                "id": "8u0e0e",
+                "name": "uploaded_at",
+                "type": "timestamp",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
                 "unique": false,
                 "index": false,
                 "unsigned": false,
@@ -304,14 +327,14 @@
                 }
             },
             {
-                "id": "8u0e0e",
-                "name": "uploaded_at",
-                "type": "timestamp",
+                "id": "zrq5fn",
+                "name": "uploaded_with_time",
+                "type": "boolean",
                 "length": "",
                 "defValue": "",
                 "comment": "",
                 "autoInc": false,
-                "nullable": false,
+                "nullable": true,
                 "unique": false,
                 "index": false,
                 "unsigned": false,
@@ -961,6 +984,16 @@
             "target": {
                 "columnId": "6itl16",
                 "tableId": "pw67v6"
+            }
+        },
+        {
+            "source": {
+                "columnId": "6p20hs",
+                "tableId": "fnvue5"
+            },
+            "target": {
+                "columnId": "2o7nu",
+                "tableId": "u8m7lb"
             }
         }
     ]
