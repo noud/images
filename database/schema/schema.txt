@@ -51,28 +51,28 @@
                 "y": 216
             },
             "fnvue5": {
-                "x": 302,
-                "y": 227
+                "x": 329,
+                "y": 236
             },
             "ma1cq": {
-                "x": 587,
-                "y": 20
+                "x": 656,
+                "y": 15
             },
             "rchz4n": {
-                "x": 584,
-                "y": 197
+                "x": 674,
+                "y": 459
             },
             "v5e11l": {
-                "x": 576,
-                "y": 375
+                "x": 659,
+                "y": 284
             },
             "u8m7lb": {
-                "x": 48,
-                "y": 329
+                "x": 45,
+                "y": 360
             },
             "63shy6": {
-                "x": 281,
-                "y": 17
+                "x": 302,
+                "y": 15
             },
             "pw67v6": {
                 "x": 27,
@@ -97,14 +97,14 @@
         },
         {
             "id": "ma1cq",
-            "name": "users",
+            "name": "accounts",
             "color": "table-header-purple",
             "softDelete": false,
             "timeStamp": true
         },
         {
             "id": "rchz4n",
-            "name": "user_images",
+            "name": "account_images",
             "color": "table-header-blue",
             "softDelete": false,
             "timeStamp": true
@@ -162,6 +162,29 @@
                         "name": ""
                     }
                 }
+            },
+            {
+                "id": "9lqywi",
+                "name": "name",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": true,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
             }
         ],
         "fnvue5": [
@@ -196,7 +219,7 @@
                 "defValue": "",
                 "comment": "",
                 "autoInc": false,
-                "nullable": false,
+                "nullable": true,
                 "unique": false,
                 "index": true,
                 "unsigned": true,
@@ -237,7 +260,7 @@
             {
                 "id": "nge7tn",
                 "name": "filename",
-                "type": "integer",
+                "type": "string",
                 "length": "",
                 "defValue": "",
                 "comment": "",
@@ -373,6 +396,121 @@
                         "name": ""
                     }
                 }
+            },
+            {
+                "id": "2ucv2h",
+                "name": "name",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "y2lzgh",
+                "name": "email",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": true,
+                "unique": true,
+                "index": true,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "upvnhn",
+                "name": "email_verified_at",
+                "type": "timestamp",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": true,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "3pzw0f",
+                "name": "password",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": true,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "o6pyyt",
+                "name": "remember_token",
+                "type": "string",
+                "length": "100",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": true,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
             }
         ],
         "rchz4n": [
@@ -401,7 +539,7 @@
             },
             {
                 "id": "i2kvs",
-                "name": "user_id",
+                "name": "account_id",
                 "type": "bigInteger",
                 "length": "",
                 "defValue": "",
@@ -418,7 +556,7 @@
                     },
                     "on": {
                         "id": "ma1cq",
-                        "name": "users"
+                        "name": "accounts"
                     }
                 }
             },
@@ -472,7 +610,7 @@
             },
             {
                 "id": "55p2rg",
-                "name": "user_image_id",
+                "name": "account_image_id",
                 "type": "bigInteger",
                 "length": "",
                 "defValue": "",
@@ -489,7 +627,7 @@
                     },
                     "on": {
                         "id": "rchz4n",
-                        "name": "user_images"
+                        "name": "account_images"
                     }
                 }
             },
