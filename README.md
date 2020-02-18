@@ -1,4 +1,4 @@
-# img
+# Images
 
 ![img](./docs/standard_emoticons.png?raw=true "img")
 
