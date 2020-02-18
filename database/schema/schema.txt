@@ -288,7 +288,7 @@
                 "defValue": "",
                 "comment": "",
                 "autoInc": false,
-                "nullable": false,
+                "nullable": true,
                 "unique": false,
                 "index": true,
                 "unsigned": true,

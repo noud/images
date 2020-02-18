@@ -1,1 +1,1 @@
-filename,height,width,name
+filename,filename_extension_id,height,width,name
