@@ -1,0 +1,829 @@
+{
+    "database": {
+        "name": "img"
+    },
+    "ui": {
+        "database": {
+            "showModal": false,
+            "edit": false
+        },
+        "table": {
+            "showModal": false,
+            "edit": false,
+            "editData": {
+                "id": "",
+                "name": "",
+                "softDelete": false,
+                "timeStamp": true
+            }
+        },
+        "column": {
+            "showModal": false,
+            "edit": false,
+            "editData": {
+                "id": "",
+                "name": "",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            "tableId": ""
+        },
+        "positions": {
+            "knxwwq": {
+                "x": 50,
+                "y": 216
+            },
+            "fnvue5": {
+                "x": 302,
+                "y": 227
+            },
+            "ma1cq": {
+                "x": 587,
+                "y": 20
+            },
+            "rchz4n": {
+                "x": 584,
+                "y": 197
+            },
+            "v5e11l": {
+                "x": 576,
+                "y": 375
+            },
+            "u8m7lb": {
+                "x": 48,
+                "y": 329
+            },
+            "63shy6": {
+                "x": 281,
+                "y": 17
+            },
+            "pw67v6": {
+                "x": 27,
+                "y": 21
+            }
+        }
+    },
+    "tables": [
+        {
+            "id": "knxwwq",
+            "name": "img_types",
+            "color": "table-header-blue",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "fnvue5",
+            "name": "imgs",
+            "color": "table-header-green",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "ma1cq",
+            "name": "users",
+            "color": "table-header-purple",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "rchz4n",
+            "name": "user_imgs",
+            "color": "table-header-blue",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "v5e11l",
+            "name": "uuids",
+            "color": "table-header-red",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "u8m7lb",
+            "name": "exts",
+            "color": "table-header-blue",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "63shy6",
+            "name": "emoticons",
+            "color": "table-header-purple",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "pw67v6",
+            "name": "emoticon_types",
+            "color": "table-header-purple",
+            "softDelete": false,
+            "timeStamp": true
+        }
+    ],
+    "columns": {
+        "knxwwq": [
+            {
+                "id": "dpoong",
+                "name": "id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ],
+        "fnvue5": [
+            {
+                "id": "ujzvtu",
+                "name": "id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "7zm6d",
+                "name": "img_type_id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "dpoong",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "knxwwq",
+                        "name": "img_types"
+                    }
+                }
+            },
+            {
+                "id": "hr62k",
+                "name": "name",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "nge7tn",
+                "name": "filename",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "zrq5fn",
+                "name": "time",
+                "type": "boolean",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": true,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "8u0e0e",
+                "name": "uploaded_at",
+                "type": "timestamp",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "6fbd5x",
+                "name": "height",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "id9u4",
+                "name": "width",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ],
+        "ma1cq": [
+            {
+                "id": "40r6xi",
+                "name": "id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ],
+        "rchz4n": [
+            {
+                "id": "190rpa",
+                "name": "id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "i2kvs",
+                "name": "user_id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "40r6xi",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "ma1cq",
+                        "name": "users"
+                    }
+                }
+            },
+            {
+                "id": "8905s",
+                "name": "img_id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "ujzvtu",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "fnvue5",
+                        "name": "imgs"
+                    }
+                }
+            }
+        ],
+        "v5e11l": [
+            {
+                "id": "zzba0l",
+                "name": "id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "55p2rg",
+                "name": "user_img_id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "190rpa",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "rchz4n",
+                        "name": "user_imgs"
+                    }
+                }
+            },
+            {
+                "id": "863dxf",
+                "name": "uuid",
+                "type": "string",
+                "length": "36",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ],
+        "u8m7lb": [
+            {
+                "id": "2o7nu",
+                "name": "id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "8btx0o",
+                "name": "img_type_id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "dpoong",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "knxwwq",
+                        "name": "img_types"
+                    }
+                }
+            },
+            {
+                "id": "nuqjc6",
+                "name": "ext",
+                "type": "string",
+                "length": "4",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ],
+        "63shy6": [
+            {
+                "id": "b6y1wn",
+                "name": "id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "qfzb7o",
+                "name": "emoticon_type_id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "6itl16",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "pw67v6",
+                        "name": "emoticon_types"
+                    }
+                }
+            },
+            {
+                "id": "2lxzn",
+                "name": "emoticon_type_order",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "t0dmk",
+                "name": "img_id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "ujzvtu",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "fnvue5",
+                        "name": "imgs"
+                    }
+                }
+            }
+        ],
+        "pw67v6": [
+            {
+                "id": "6itl16",
+                "name": "id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "j2uc3",
+                "name": "name",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "1hrd4",
+                "name": "system_name",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ]
+    },
+    "relations": [
+        {
+            "source": {
+                "columnId": "8905s",
+                "tableId": "rchz4n"
+            },
+            "target": {
+                "columnId": "ujzvtu",
+                "tableId": "fnvue5"
+            }
+        },
+        {
+            "source": {
+                "columnId": "i2kvs",
+                "tableId": "rchz4n"
+            },
+            "target": {
+                "columnId": "40r6xi",
+                "tableId": "ma1cq"
+            }
+        },
+        {
+            "source": {
+                "columnId": "7zm6d",
+                "tableId": "fnvue5"
+            },
+            "target": {
+                "columnId": "dpoong",
+                "tableId": "knxwwq"
+            }
+        },
+        {
+            "source": {
+                "columnId": "55p2rg",
+                "tableId": "v5e11l"
+            },
+            "target": {
+                "columnId": "190rpa",
+                "tableId": "rchz4n"
+            }
+        },
+        {
+            "source": {
+                "columnId": "8btx0o",
+                "tableId": "u8m7lb"
+            },
+            "target": {
+                "columnId": "dpoong",
+                "tableId": "knxwwq"
+            }
+        },
+        {
+            "source": {
+                "columnId": "t0dmk",
+                "tableId": "63shy6"
+            },
+            "target": {
+                "columnId": "ujzvtu",
+                "tableId": "fnvue5"
+            }
+        },
+        {
+            "source": {
+                "columnId": "qfzb7o",
+                "tableId": "63shy6"
+            },
+            "target": {
+                "columnId": "6itl16",
+                "tableId": "pw67v6"
+            }
+        }
+    ]
+}
