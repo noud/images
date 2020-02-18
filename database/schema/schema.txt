@@ -1,6 +1,6 @@
 {
     "database": {
-        "name": "img"
+        "name": "images"
     },
     "ui": {
         "database": {
@@ -83,14 +83,14 @@
     "tables": [
         {
             "id": "knxwwq",
-            "name": "img_types",
+            "name": "image_types",
             "color": "table-header-blue",
             "softDelete": false,
             "timeStamp": true
         },
         {
             "id": "fnvue5",
-            "name": "imgs",
+            "name": "images",
             "color": "table-header-green",
             "softDelete": false,
             "timeStamp": true
@@ -104,7 +104,7 @@
         },
         {
             "id": "rchz4n",
-            "name": "user_imgs",
+            "name": "user_images",
             "color": "table-header-blue",
             "softDelete": false,
             "timeStamp": true
@@ -118,7 +118,7 @@
         },
         {
             "id": "u8m7lb",
-            "name": "exts",
+            "name": "extensions",
             "color": "table-header-blue",
             "softDelete": false,
             "timeStamp": true
@@ -190,7 +190,7 @@
             },
             {
                 "id": "7zm6d",
-                "name": "img_type_id",
+                "name": "image_type_id",
                 "type": "integer",
                 "length": "",
                 "defValue": "",
@@ -207,7 +207,7 @@
                     },
                     "on": {
                         "id": "knxwwq",
-                        "name": "img_types"
+                        "name": "image_types"
                     }
                 }
             },
@@ -424,7 +424,7 @@
             },
             {
                 "id": "8905s",
-                "name": "img_id",
+                "name": "image_id",
                 "type": "bigInteger",
                 "length": "",
                 "defValue": "",
@@ -441,7 +441,7 @@
                     },
                     "on": {
                         "id": "fnvue5",
-                        "name": "imgs"
+                        "name": "images"
                     }
                 }
             }
@@ -472,7 +472,7 @@
             },
             {
                 "id": "55p2rg",
-                "name": "user_img_id",
+                "name": "user_image_id",
                 "type": "bigInteger",
                 "length": "",
                 "defValue": "",
@@ -489,7 +489,7 @@
                     },
                     "on": {
                         "id": "rchz4n",
-                        "name": "user_imgs"
+                        "name": "user_images"
                     }
                 }
             },
@@ -543,7 +543,7 @@
             },
             {
                 "id": "8btx0o",
-                "name": "img_type_id",
+                "name": "image_type_id",
                 "type": "integer",
                 "length": "",
                 "defValue": "",
@@ -560,13 +560,13 @@
                     },
                     "on": {
                         "id": "knxwwq",
-                        "name": "img_types"
+                        "name": "image_types"
                     }
                 }
             },
             {
                 "id": "nuqjc6",
-                "name": "ext",
+                "name": "extension",
                 "type": "string",
                 "length": "4",
                 "defValue": "",
@@ -660,7 +660,7 @@
             },
             {
                 "id": "t0dmk",
-                "name": "img_id",
+                "name": "image_id",
                 "type": "bigInteger",
                 "length": "",
                 "defValue": "",
@@ -677,7 +677,7 @@
                     },
                     "on": {
                         "id": "fnvue5",
-                        "name": "imgs"
+                        "name": "images"
                     }
                 }
             }
