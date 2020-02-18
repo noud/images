@@ -7,6 +7,8 @@
 - [GIF](https://en.wikipedia.org/wiki/GIF)
 - [WebP](https://en.wikipedia.org/wiki/WebP)
 
+## [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+
 ## [Entity-Relationship Diagram](https://en.wikipedia.org/wiki/Entity–relationship_model)
 
 ![Google Structured data Entity-Relationship Diagram](./docs/erd.png?raw=true "Google Structured data Entity-Relationship Diagram")
