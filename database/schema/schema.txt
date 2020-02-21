@@ -59,12 +59,12 @@
                 "y": 15
             },
             "rchz4n": {
-                "x": 674,
-                "y": 459
+                "x": 687,
+                "y": 500
             },
             "v5e11l": {
-                "x": 659,
-                "y": 284
+                "x": 660,
+                "y": 288
             },
             "u8m7lb": {
                 "x": 45,
@@ -111,7 +111,7 @@
         },
         {
             "id": "v5e11l",
-            "name": "uuids",
+            "name": "uploaded_images",
             "color": "table-header-red",
             "softDelete": false,
             "timeStamp": true
@@ -125,14 +125,14 @@
         },
         {
             "id": "63shy6",
-            "name": "emoticons",
+            "name": "image_categories",
             "color": "table-header-purple",
             "softDelete": false,
             "timeStamp": true
         },
         {
             "id": "pw67v6",
-            "name": "emoticon_types",
+            "name": "image_category_types",
             "color": "table-header-purple",
             "softDelete": false,
             "timeStamp": true
@@ -231,29 +231,6 @@
                     "on": {
                         "id": "knxwwq",
                         "name": "image_types"
-                    }
-                }
-            },
-            {
-                "id": "hr62k",
-                "name": "name",
-                "type": "string",
-                "length": "",
-                "defValue": "",
-                "comment": "",
-                "autoInc": false,
-                "nullable": false,
-                "unique": false,
-                "index": false,
-                "unsigned": false,
-                "foreignKey": {
-                    "references": {
-                        "id": "",
-                        "name": ""
-                    },
-                    "on": {
-                        "id": "",
-                        "name": ""
                     }
                 }
             },
@@ -676,6 +653,29 @@
                         "name": ""
                     }
                 }
+            },
+            {
+                "id": "0ywqd",
+                "name": "shortcut",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
             }
         ],
         "u8m7lb": [
@@ -792,7 +792,7 @@
                     },
                     "on": {
                         "id": "pw67v6",
-                        "name": "emoticon_types"
+                        "name": "image_category_types"
                     }
                 }
             },
