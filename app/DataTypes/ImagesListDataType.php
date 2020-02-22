@@ -4,7 +4,7 @@ namespace App\DataTypes;
 
 class ImagesListDataType
 {
-	public $shortcut;
+    public $shortcut;
 
     public $collection;
     
