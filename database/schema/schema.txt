@@ -51,8 +51,8 @@
                 "y": 216
             },
             "fnvue5": {
-                "x": 329,
-                "y": 236
+                "x": 325,
+                "y": 284
             },
             "ma1cq": {
                 "x": 656,
@@ -71,8 +71,8 @@
                 "y": 360
             },
             "63shy6": {
-                "x": 302,
-                "y": 15
+                "x": 339,
+                "y": 20
             },
             "pw67v6": {
                 "x": 27,
@@ -361,6 +361,29 @@
                 "unique": false,
                 "index": false,
                 "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "kdwd2",
+                "name": "shortcut",
+                "type": "string",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
                 "foreignKey": {
                     "references": {
                         "id": "",
@@ -775,7 +798,7 @@
             },
             {
                 "id": "qfzb7o",
-                "name": "emoticon_type_id",
+                "name": "image_category_type_id",
                 "type": "integer",
                 "length": "",
                 "defValue": "",
@@ -798,7 +821,7 @@
             },
             {
                 "id": "2lxzn",
-                "name": "emoticon_type_order",
+                "name": "image_category_type_order",
                 "type": "integer",
                 "length": "",
                 "defValue": "",
