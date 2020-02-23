@@ -35,6 +35,7 @@
         </table>
     </div>
 </body>
-@include('scrapers.css_urls')
+@include('scrapers.css_background_urls')
+@include('scrapers.css_font_urls')
 </html>
  

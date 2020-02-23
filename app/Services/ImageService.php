@@ -15,16 +15,23 @@ class ImageService
 	{
         $images = Image::all();
 
-		// @todo relations
-		$images = $images->slice(0, -3);
-		// foreach ($images as $image) {
-		//     $imageCategoryType = $image->categoryType;
-		//     if ($imageCategoryType) {
-		//         dd($imageCategoryType->imageCategoryType);
-		//         dd('g');
-		//     }
-		// }
-		// dd($images);
+		// @todo relation
+
+		// forget non matching
+		foreach ($images as $key => $image) {
+		    if ($category = $image->category) {
+		        if($category->imageCategoryType->shortcut != $shortcut) {
+					$images->forget($key);
+				}
+		    } else {
+				$images->forget($key);
+			}
+		}
+
+		// sort
+		$images->sortBy(function ($image) {
+			return $image->category->image_category_type_order;
+		});
 
 		return $images;
 	}        
