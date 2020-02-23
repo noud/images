@@ -26,4 +26,9 @@ class Image extends BaseImage
 	{
 		return $this->image_type ? $this->image_type->name : 'gif';
 	}
+	
+	public function getSrcAttribute()
+	{
+		return '/uploads/avatar/'.$this->uri_part_date.'/'.$this->filename.'.'.$this->extension;
+	}
 }
