@@ -5,6 +5,7 @@
 ## Image types
 
 - [GIF](https://en.wikipedia.org/wiki/GIF)
+- [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
 - [WebP](https://en.wikipedia.org/wiki/WebP)
 
 ## [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
