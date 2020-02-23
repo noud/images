@@ -29,7 +29,7 @@ php artisan migrate
 ```
 php artisan code:models
 ```
-In the target project development environment this shell script is part of the [Reliese](https://github.com/reliese/laravel) [Laravel](https://github.com/laravel/laravel) package.
+In the target project development environment this console command is part of the [Reliese](https://github.com/reliese/laravel) [Laravel](https://github.com/laravel/laravel) package.
 
 ## Copyright & license
 
