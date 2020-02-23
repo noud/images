@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Feb 18, 2020 at 10:15 PM
+-- Generation Time: Feb 23, 2020 at 08:09 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.19
 
@@ -33,48 +33,53 @@ INSERT INTO `accounts` (`id`, `name`, `email`, `email_verified_at`, `password`, 
 (4, 'noud41', 'noud4@home.nl', NULL, '', NULL, NULL, NULL);
 
 --
--- Dumping data for table `account_images`
+-- Dumping data for table `image_categories`
 --
 
-INSERT INTO `account_images` (`id`, `account_id`, `image_id`, `created_at`, `updated_at`) VALUES
-(1, 4, 1, NULL, NULL),
-(2, 4, 2, NULL, NULL),
-(3, 4, 3, NULL, NULL),
-(4, 4, 4, NULL, NULL),
-(5, 4, 5, NULL, NULL),
-(6, 4, 6, NULL, NULL),
-(7, 4, 7, NULL, NULL),
-(8, 4, 9, NULL, NULL),
-(9, 1, 13, NULL, NULL),
-(10, 1, 11, NULL, NULL),
-(11, 1, 7, NULL, NULL),
-(12, 1, 2, NULL, NULL),
-(13, 1, 10, NULL, NULL);
-
---
--- Dumping data for table `emoticon_types`
---
-
-INSERT INTO `emoticon_types` (`id`, `name`, `system_name`, `created_at`, `updated_at`) VALUES
-(1, 'Standard Emoticons', '', NULL, NULL);
-
---
--- Dumping data for table `extensions`
---
-
-INSERT INTO `extensions` (`id`, `image_type_id`, `extension`, `created_at`, `updated_at`) VALUES
-(1, 1, 'jpg', NULL, NULL),
-(2, 2, 'gif', NULL, NULL),
-(3, 3, 'webp', NULL, NULL);
+INSERT INTO `image_categories` (`id`, `image_category_type_id`, `image_category_type_order`, `image_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, NULL, NULL),
+(2, 1, 2, 2, NULL, NULL),
+(3, 1, 3, 3, NULL, NULL),
+(4, 1, 4, 4, NULL, NULL),
+(7, 1, 5, 5, NULL, NULL),
+(8, 1, 6, 6, NULL, NULL),
+(9, 1, 7, 7, NULL, NULL),
+(10, 1, 8, 8, NULL, NULL),
+(11, 1, 9, 9, NULL, NULL),
+(12, 1, 10, 10, NULL, NULL),
+(13, 1, 11, 11, NULL, NULL),
+(14, 1, 12, 12, NULL, NULL),
+(15, 1, 13, 13, NULL, NULL),
+(16, 1, 14, 14, NULL, NULL),
+(17, 1, 15, 15, NULL, NULL),
+(18, 1, 16, 16, NULL, NULL),
+(19, 1, 17, 17, NULL, NULL),
+(20, 1, 18, 18, NULL, NULL),
+(21, 1, 19, 19, NULL, NULL),
+(22, 1, 21, 21, NULL, NULL),
+(23, 1, 22, 22, NULL, NULL),
+(24, 1, 23, 23, NULL, NULL),
+(25, 1, 24, 24, NULL, NULL),
+(26, 1, 25, 25, NULL, NULL),
+(27, 1, 26, 26, NULL, NULL),
+(28, 1, 27, 27, NULL, NULL),
+(29, 1, 28, 28, NULL, NULL),
+(30, 1, 29, 29, NULL, NULL),
+(31, 1, 30, 30, NULL, NULL),
+(32, 1, 31, 31, NULL, NULL),
+(33, 1, 32, 32, NULL, NULL),
+(34, 1, 33, 33, NULL, NULL),
+(35, 1, 34, 34, NULL, NULL),
+(36, 1, 20, 20, NULL, NULL),
+(45, 5, 1, 35, NULL, NULL),
+(46, 5, 1, 41, NULL, NULL);
 
 --
 -- Dumping data for table `image_types`
 --
 
 INSERT INTO `image_types` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'JPEG', NULL, NULL),
-(2, 'GIF', NULL, NULL),
-(3, 'WebP', NULL, NULL);
+(1, 'webp', NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

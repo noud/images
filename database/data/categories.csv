@@ -1,14 +1,16 @@
--3,"Apps & Bots"
--2,"css"
--1,"emoticon"
-4,"Adult"
-3,"Cute"
-1,"Funny"
-6,"Girly"
-10,"Love"
-8,"Misc"
-11,"Model Specific"
-9,"Music"
-2,"Standard"
-7,"Text"
-5,"Wacky"
+-5,"Apps & Bots",'',0
+-4,'emoticon_button','',0
+-3,'button_sprites','',0
+-2,"css",'images',0
+-1,"emoticon",'uploads/avatar',1
+4,"Adult",'',0
+3,"Cute",'',0
+1,"Funny",'',0
+6,"Girly",'',0
+10,"Love",'',0
+8,"Misc",'',0
+11,"Model Specific",'',0
+9,"Music",'',0
+2,"Standard",'',0
+7,"Text",'',0
+5,"Wacky",'',0
