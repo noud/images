@@ -28,3 +28,8 @@ php artisan migrate
 php artisan code:models
 ```
 In the target project development environment this shell script is part of the [Reliese](https://github.com/reliese/laravel) [Laravel](https://github.com/laravel/laravel) package.
+
+## Copyright & license
+
+- database structure & code: MIT license
+- css & images: © Copyright Chaturbate.com 2011 - 2020
