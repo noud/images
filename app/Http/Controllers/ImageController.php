@@ -10,12 +10,12 @@ use App\Services\ImageService;
 class ImageController extends Controller
 {
     private $shortcut;
-    
+
     public function __construct(ImageService $imageService)
     {
         $this->imageService = $imageService;
     }
-    
+
     public function popup()
     {
         $images = $this->imageService->getImageByCategoryTypeShortcut('emoticon');
@@ -25,7 +25,7 @@ class ImageController extends Controller
                 'data' => (new ImagesListDataType('emoticon', $images))
             ]);
         }
-        
+
         return 'not found';
     }
 }

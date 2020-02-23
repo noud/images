@@ -3,30 +3,25 @@
 namespace App\Services;
 
 use App\Models\Image;
+use Illuminate\Database\Eloquent\Builder;
 
 class ImageService
 {
+	private $shortcut;
+
 	public static function getImageByShortcut(string $shortcut)
 	{
         return Image::where('shortcut', $shortcut)->first();
-	}        
+	}       
 
 	public function getImageByCategoryTypeShortcut(string $shortcut)
 	{
-        $images = Image::all();
+		$this->shortcut = $shortcut;
 
-		// @todo relation
-
-		// forget non matching
-		foreach ($images as $key => $image) {
-		    if ($category = $image->category) {
-		        if($category->imageCategoryType->shortcut != $shortcut) {
-					$images->forget($key);
-				}
-		    } else {
-				$images->forget($key);
-			}
-		}
+		// fetch
+		$images = Image::whereHas('category.image_category_type', function (Builder $query) {
+			return $query->where('image_category_types.shortcut', $this->shortcut);
+		})->get();
 
 		// sort
 		$images->sortBy(function ($image) {
@@ -34,5 +29,5 @@ class ImageService
 		});
 
 		return $images;
-	}        
+	}
 }
