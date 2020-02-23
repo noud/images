@@ -24,7 +24,9 @@ class Image extends BaseImage
 	
 	public function getUriPartAttribute()
 	{
-		return '/'.$this->uri_part_path.'/'.(!isset($this->category) || isset($this->category) && $this->category->image_category_type->uri_part_date ? $this->uri_part_date.'/' : '');
+		return '/'.
+			$this->uri_part_path.'/'.
+			(!isset($this->category) || isset($this->category) && $this->category->image_category_type->uri_part_date ? $this->uri_part_date.'/' : '');
 	}
 	
 	public function getUriPartPathAttribute()
