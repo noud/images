@@ -19,6 +19,11 @@ class Image extends BaseImage
 	
 	public function getUriPartDateAttribute()
 	{
-		return $this->uploaded_at->format('Y').'/'.$this->uploaded_at->format('m').'/'.$this->uploaded_at->format('d').'/';
+		return $this->uploaded_at->format('Y').'/'.$this->uploaded_at->format('m').'/'.$this->uploaded_at->format('d');
+	}
+	
+	public function getExtensionAttribute()
+	{
+		return $this->image_type ? $this->image_type->name : 'gif';
 	}
 }

@@ -14,7 +14,7 @@
                         <div class="title">{{__('data_types.'.$data->shortcut)}}</div>
                         <div class="popup_imgs">
                         @foreach($data->collection as $image)
-                            <img src="/uploads/avatar/{{$image->uri_part_date}}/{{$image->filename}}.{{$image->image_type ? $image->image_type->name : 'gif'}}"
+                            <img src="/uploads/avatar/{{$image->uri_part_date}}/{{$image->filename}}.{{$image->extension}}"
                                 title="{{$image->shortcut}}"
                                 class="{{$data->shortcut}}"
                                 height="{{$image->height}}"
