@@ -13,7 +13,7 @@ class ImageController extends Controller
         $images = Image::all();
 
         // @todo relations
-        $images = $images->slice(0, -2);
+        $images = $images->slice(0, -3);
         // foreach ($images as $image) {
         //     $imageCategoryType = $image->categoryType;
         //     if ($imageCategoryType) {

@@ -16,6 +16,22 @@ class Image extends BaseImage
 		'height',
 		'width'
 	];
+
+	public function category()
+	{
+		return $this->hasOne(ImageCategory::class);
+	}
+	
+	public function getUriPartAttribute()
+	{
+		return '/'.$this->uri_part_path.'/'.(!isset($this->category) || isset($this->category) && $this->category->image_category_type->uri_part_date ? $this->uri_part_date.'/' : '');
+	}
+	
+	public function getUriPartPathAttribute()
+	{
+		// @todo remove constant
+		return isset($this->category) ? $this->category->image_category_type->uri_part_path : 'uploads/avatar';
+	}
 	
 	public function getUriPartDateAttribute()
 	{
@@ -29,7 +45,6 @@ class Image extends BaseImage
 	
 	public function getSrcAttribute()
 	{
-		// @todo pathPart in categoryType
-		return '/uploads/avatar/'.$this->uri_part_date.'/'.$this->filename.'.'.$this->extension;
+		return $this->uri_part.$this->filename.'.'.$this->extension;
 	}
 }

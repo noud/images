@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/css/output.f48c2a3e41ca.css"
         type="text/css" media="all" />
 </head>
-
+@inject('imageService', 'App\Services\ImageService')
 <body>
     <div style="display: block;" class="overlay_popup emote_popup">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -27,13 +27,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="/images/emoticon_div_carrot.gif" alt="div"
-                            width="396" height="12" class="divider"></td>
+                    @php($image = $imageService::getImageByShortcut('emoticon_div_carrot'))
+                    <td><img src="{{$image->src}}" alt="div"
+                            width="{{$image->width}}" height="{{$image->height}}" class="divider"></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </body>
-
-</html>
 @include('scrapers.css_urls')
+</html>
+ 
