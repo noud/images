@@ -79,8 +79,8 @@ INSERT INTO `image_categories` (`id`, `image_category_type_id`, `image_category_
 (34, 101, 33, 33, NULL, NULL),
 (35, 101, 34, 34, NULL, NULL),
 (36, 101, 20, 20, NULL, NULL),
-(45, 5, 1, 35, NULL, NULL),
-(46, 5, 1, 41, NULL, NULL);
+(45, 102, 1, 35, NULL, NULL),
+(46, 102, 1, 41, NULL, NULL);
 
 --
 -- Dumping data for table `image_types`
