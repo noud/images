@@ -29,6 +29,7 @@ class Image extends BaseImage
 	
 	public function getSrcAttribute()
 	{
+		// @todo pathPart in categoryType
 		return '/uploads/avatar/'.$this->uri_part_date.'/'.$this->filename.'.'.$this->extension;
 	}
 }
