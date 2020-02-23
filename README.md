@@ -32,4 +32,4 @@ In the target project development environment this shell script is part of the [
 ## Copyright & license
 
 - database structure & code: MIT license
-- css & images: © Copyright Chaturbate.com 2011 - 2020
+- css, fonts & images: © Copyright Chaturbate.com 2011 - 2020
