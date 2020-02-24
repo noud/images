@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTypes\ImageDataType;
 use App\DataTypes\ListDataType;
 use App\Events\MyEvent;
 use App\Http\Requests\UploadRequest;
@@ -44,37 +45,41 @@ class ImageController extends Controller
     public function emoticons(UploadRequest $request)
     {
         $formData = $request->validated();
-        dump($formData);
 
         $file = $request->file('image');
         $fileExtension = $file->getClientOriginalExtension();
         $fileName = str_replace('.' . $fileExtension ,'' , $file->getClientOriginalName());
 
-        //Display File Name
-        echo 'File Name: '.$fileName;
-        echo '<br>';
-        //Display File Extension
-        echo 'File Extension: '.$fileExtension;
-        echo '<br>';
-        //Display File Real Path
-        echo 'File Real Path: '.$file->getRealPath();
-        echo '<br>';
-        //Display File Size
-        echo 'File Size: '.$file->getSize();
-        echo '<br>';
-        //Display File Mime Type
-        echo 'File Mime Type: '.$file->getMimeType();
+        // dump($formData);
+        // echo 'File Name: '.$fileName;
+        // echo '<br>';
+        // echo 'File Extension: '.$fileExtension;
+        // echo '<br>';
+        // echo 'File Real Path: '.$file->getRealPath();
+        // echo '<br>';
+        // echo 'File Size: '.$file->getSize();
+        // echo '<br>';
+        // echo 'File Mime Type: '.$file->getMimeType();
      
-        //Move Uploaded File
-        $destinationPath = 'uploads';
+        // @todo Move Uploaded File
+        $destinationPath = 'images' . '/' . now()->format('Y/m/d/');
         $file->move($destinationPath,$file->getClientOriginalName());
 
         $extension = Extension::where('extension', $fileExtension)->first();
-        Image::create([
+        $image = Image::create([
             'shortcut' => $formData['slug'],
             // '_id' => $formData['category'],
             'filename_extension_id' => $extension->id,
             'filename' => $fileName,
+        ]);
+
+        return redirect()->route('images.upload_complete', [$image]);
+    }
+
+    public function uploadComplete(Image $image)
+    {
+        return view('images.upload_complete', [
+            'data' => (new ImageDataType($image->shortcut, $image->src))
         ]);
     }
 }
