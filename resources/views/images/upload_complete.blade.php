@@ -26,7 +26,7 @@
                     <img src='{{$data->src}}'
                         class='emoticon' data-emoticon=':{{$data->shortcut}}' title=':{{$data->shortcut}}' />
                     <div class='emoticon' data-emoticon=':{{$data->shortcut}}'>:{{$data->shortcut}}</div>
-                    <a href='#' class='emoticon' data-emoticon=':{{$data->shortcut}}'>{{__('data_types.upload_complete.link')}}</a>
+                    <!-- <a href='#' class='emoticon' data-emoticon=':{{$data->shortcut}}'>{{__('data_types.upload_complete.link')}}</a> -->
                 </td>
             </tr>
         </table>
