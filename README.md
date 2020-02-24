@@ -1,6 +1,10 @@
 # Images
 
-![images](./docs/standard_emoticons.png?raw=true "images")
+![standard_emoticons](./docs/standard_emoticons.png?raw=true "standard_emoticons")
+
+![upload](./docs/upload.png?raw=true "upload")
+
+![upload_complete](./docs/upload_complete.png?raw=true "upload_complete")
 
 ## Image types
 
