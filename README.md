@@ -32,8 +32,8 @@ In the target project development environment this console command is part of th
 ## Techniques used
 
 - languages
-    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) [jQuery](https://jquery.com/)
-    - [PHP](https://en.wikipedia.org/wiki/PHP)
+    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript): [jQuery](https://jquery.com/)
+    - [PHP](https://en.wikipedia.org/wiki/PHP): [Laravel](https://laravel.com)
 - [Cascading Style Sheets (CSS)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Web Open Font Format (WOFF)](https://en.wikipedia.org/wiki/Web_Open_Font_Format)
 - [universally unique identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier)
@@ -41,4 +41,4 @@ In the target project development environment this console command is part of th
 ## Copyright & license
 
 - database structure & code: MIT license
-- css, fonts & images: © Copyright Chaturbate.com 2011 - 2020
+- css & images: © Copyright Chaturbate.com 2011 - 2020
