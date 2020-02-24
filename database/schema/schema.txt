@@ -958,6 +958,29 @@
                         "name": ""
                     }
                 }
+            },
+            {
+                "id": "wrvvlm",
+                "name": "uploadable",
+                "type": "boolean",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": true,
+                "unique": false,
+                "index": false,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
             }
         ]
     },

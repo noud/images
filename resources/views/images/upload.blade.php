@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Chaturbate</title>
+    <title>{{__('data_types.title')}}</title>
     <link rel="stylesheet" href="/css/output.2527042bb38d.css"
         type="text/css" media="all" />
 </head>
@@ -13,14 +13,12 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0" id="upload_form">
             <tr>
                 <td>
-                    <h1>Upload Graphic</h1>
+                    <h1>{{__('data_types.'.$data->shortcut)}}</h1>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>To insert a custom emoticon or graphic into the chat room, upload an image URL. It will also be
-                        available to other users. Do not post anything copyrighted, illegal, inappropriate or offensive
-                        in nature.</p>
+                    <p>{{__('data_types.'.$data->shortcut.'.txt')}}</p>
                 </td>
             </tr>
             <tr>
@@ -33,7 +31,7 @@
                                     <input type='hidden' name='csrfmiddlewaretoken'
                                         value='JAUGlIOaRdYDM3UsxFvyn1ygnI39EPjBPvLfzgTkFiERPSdFU9SQUAjrGubNze35' />
                                     <div id="error_notice" class="formvalidate_hidden">
-                                        <p>Please correct the errors below.</p>
+                                        <p>{{__('data_types.'.$data->shortcut.'.error')}}</p>
                                         <ul class='errorlist'>
                                         </ul>
                                     </div>
@@ -58,7 +56,7 @@
                                             </style>
                                             <tr>
                                                 <th class='requiredfield'>
-                                                    <label for="id_slug" class="slug_label">Shortcut:</label>
+                                                    <label for="id_slug" class="slug_label">{{__('data_types.'.$data->shortcut.'.label.shortcut')}}</label>
                                                 </th>
                                                 <td><input type="text" name="slug" required id="id_slug"
                                                         maxlength="32" />
@@ -76,7 +74,7 @@
                                             </tr>
                                             <tr>
                                                 <th class='requiredfield'>
-                                                    <label for="id_image" class="image_label">Image:</label>
+                                                    <label for="id_image" class="image_label">{{__('data_types.'.$data->shortcut.'.label.image')}}</label>
                                                 </th>
                                                 <td><input type="file" name="image" required id="id_image" />
                                                     <div class="formvalidate_spinner formvalidate_hidden"
@@ -93,21 +91,13 @@
                                             </tr>
                                             <tr>
                                                 <th class='requiredfield'>
-                                                    <label for="id_category" class="category_label">Category:</label>
+                                                    <label for="id_category" class="category_label">{{__('data_types.'.$data->shortcut.'.label.category')}}</label>
                                                 </th>
                                                 <td><select name="category" required id="id_category">
                                                         <option value="" selected>---------</option>
-                                                        <option value="4">Adult</option>
-                                                        <option value="3">Cute</option>
-                                                        <option value="1">Funny</option>
-                                                        <option value="6">Girly</option>
-                                                        <option value="10">Love</option>
-                                                        <option value="8">Misc</option>
-                                                        <option value="11">Model Specific</option>
-                                                        <option value="9">Music</option>
-                                                        <option value="2">Standard</option>
-                                                        <option value="7">Text</option>
-                                                        <option value="5">Wacky</option>
+                                                        @foreach($data->collection as $key => $uploadCategory)
+                                                            <option value="{{$key}}">{{$uploadCategory}}</option>
+                                                        @endforeach
                                                     </select>
                                                     <div class="formvalidate_spinner formvalidate_hidden"
                                                         id="category_spinner">
@@ -124,7 +114,7 @@
                                             <tr>
                                                 <th>
                                                     <label for="id_suggested_category"
-                                                        class="suggested_category_label">Suggested Category:</label>
+                                                        class="suggested_category_label">{{__('data_types.'.$data->shortcut.'.label.suggested_category')}}</label>
                                                 </th>
                                                 <td><input type="text" name="suggested_category"
                                                         id="id_suggested_category" maxlength="255" />
@@ -144,7 +134,7 @@
                                         </table>
                                     </fieldset>
                                     <div align="center">
-                                        <input type="submit" name="submit" class="button" value="Submit Image"
+                                        <input type="submit" name="submit" class="button" value="{{__('data_types.'.$data->shortcut.'.button.submit')}}"
                                             style="margin-top: 15px;" />
                                     </div>
                                 </form>
@@ -159,7 +149,7 @@
 <script type="text/javascript" src="/js/output.0b6371c03c92.js"></script>
 <script type='text/javascript'>
     $(document).ready(function () {
-        $('#submit_emoticon_form').live('submit', function () {
+        $('body').on('submit', '#submit_emoticon_form', function () {
             $(this).find('input[type=submit]').attr('disabled', 'disabled');
         })
     });

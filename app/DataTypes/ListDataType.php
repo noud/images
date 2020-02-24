@@ -2,9 +2,9 @@
 
 namespace App\DataTypes;
 
-class ImagesListDataType
+class ListDataType
 {
-    public $shortcut;
+	public $shortcut;
 
     public $collection;
     

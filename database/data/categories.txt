@@ -1,1 +1,1 @@
-id,shortcut,uri_part_path,uri_part_date
+id,uploadable,shortcut,uri_part_path,uri_part_date

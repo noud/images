@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Image;
+use App\Models\ImageCategoryType;
 use Illuminate\Database\Eloquent\Builder;
 
 class ImageService
@@ -29,5 +30,10 @@ class ImageService
 		});
 
 		return $images;
-	}
+	}       
+
+	public function getUploadables()
+	{
+		return ImageCategoryType::where('uploadable', true)->orderBy('shortcut')->pluck('shortcut','id')->toArray();
+	}       
 }
