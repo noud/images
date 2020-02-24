@@ -23,7 +23,7 @@
                             >
                         @endforeach
                         </div>
-                        <!-- <div class="more"><a href="/emoticons/">Upload Emoticons &gt;&gt;</a></div> -->
+                        <div class="more"><a href="/emoticons">{!!__('data_types.'.$data->shortcut.'.button.submit')!!}</a></div>
                     </td>
                 </tr>
                 <tr>
