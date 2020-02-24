@@ -26,10 +26,10 @@
                     <table>
                         <tr>
                             <td align="left">
-                                <form action="/emoticons/" enctype="multipart/form-data" method="post"
+                                <form action="/emoticons" enctype="multipart/form-data" method="post"
                                     id="submit_emoticon_form">
-                                    <input type='hidden' name='csrfmiddlewaretoken'
-                                        value='JAUGlIOaRdYDM3UsxFvyn1ygnI39EPjBPvLfzgTkFiERPSdFU9SQUAjrGubNze35' />
+                                    <input type='hidden' name='_token'
+                                        value='{{$csrf}}' />
                                     <div id="error_notice" class="formvalidate_hidden">
                                         <p>{{__('data_types.'.$data->shortcut.'.error')}}</p>
                                         <ul class='errorlist'>
