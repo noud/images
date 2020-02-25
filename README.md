@@ -36,10 +36,14 @@ In the target project development environment this console command is part of th
 ## Techniques used
 
 - languages
-    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript): [jQuery](https://jquery.com/)
-    - [PHP](https://en.wikipedia.org/wiki/PHP): [Laravel](https://laravel.com)
+    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+        - [Facebox](https://github.com/NightOwl888/facebox)
+        - [jQuery](https://jquery.com/)
+    - [PHP](https://en.wikipedia.org/wiki/PHP)
+        - [Laravel](https://laravel.com)
 - [Cascading Style Sheets (CSS)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Web Open Font Format (WOFF)](https://en.wikipedia.org/wiki/Web_Open_Font_Format)
+    - [Ubuntu Font Family](https://github.com/earaujoassis/ubuntu-fontface)
 - [universally unique identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
 ## Copyright & license
