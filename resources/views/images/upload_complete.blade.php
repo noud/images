@@ -1,4 +1,4 @@
-@extends('images.layout')
+@extends('images.layout.upload')
 
 @section('shortcut')
 {{__('data_types.upload_complete')}}</h1>

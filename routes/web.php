@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Route::group(['as' => 'images.'], function () {
-    Route::get('images/popup', 'ImageController@popup')->name('popup');
     Route::get('images/view/{image}', 'ImageController@uploadComplete')->name('upload_complete');
     Route::get('images/index', 'ImageController@index')->name('index');
     Route::get('emoticons', 'ImageController@upload')->name('upload');

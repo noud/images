@@ -4,8 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{__('data_types.title')}}</title>
-    <link rel="stylesheet" href="/css/output.2527042bb38d.css"
-        type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/output.2527042bb38d.css" type="text/css" media="all" />
 </head>
 
 <body>

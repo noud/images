@@ -40,19 +40,6 @@ class ImageController extends Controller
         return 'reported';
     }
 
-    public function popup()
-    {
-        $images = $this->imageService->getImageByCategoryTypeShortcut('emoticon');
-
-        if ($images) {
-            return view('images.popup', [
-                'data' => (new ListDataType('emoticon', $images))
-            ]);
-        }
-
-        return 'not found';
-    }
-
     public function upload()
     {
         $uploadables = $this->imageService->getUploadables();
