@@ -74,14 +74,12 @@
                                                 <a class="report_abuse_link"
                                                         href="{{route('images.report_abuse', [$data->collection[$selected]->shortcut])}}">{{__('data_types.link.report')}}</a>
                                                 <div class="emoticon_abuse_categories" style="display: block;">
-                                                        <span id="abuse_category_options">
-                                                                Choose a category:
-                                                                <select class="abuse_category">
-                                                                        <option value="ignore">Just ignore this emoticon</option>
-                                                                        <option value="offensive">Offensive</option>
-                                                                        <option value="disgusting">Disgusting</option>
-                                                                        <option value="fake_tip">Fake Tip</option>
-                                                                        <option value="advertising">Advertising</option>
+                                                        <span id="{{$abuseCategories->shortcut}}_options">
+                                                                {{__($abuseCategories->shortcut.'.title')}}
+                                                                <select class="{{$abuseCategories->shortcut}}">
+                                                                        @foreach($abuseCategories->collection as $abuseCategory)
+                                                                        <option value="{{$abuseCategory}}">{{__($abuseCategories->shortcut.'.'.$abuseCategory)}}</option>
+                                                                        @endforeach
                                                                 </select>
                                                         </span>
                                                         <div class="button_abuse_report"><a href="#">{{__('data_types.button.report')}}</a></div>

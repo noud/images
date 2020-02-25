@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\AbuseCategory;
 use App\Models\Image;
 use App\Models\ImageCategoryType;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,7 +16,7 @@ class ImageService
         return Image::where('shortcut', $shortcut)->first();
 	}       
 
-	public function getImageByCategoryTypeShortcut(string $shortcut)
+	public function getImagesByCategoryTypeShortcut(string $shortcut)
 	{
 		$this->shortcut = $shortcut;
 
@@ -55,4 +56,16 @@ class ImageService
 		return $data;
 	}
 
+	public function getAbuseCategories()
+	{
+		// @todo AbuseCategory
+		return [
+			"ignore" => "ignore",
+			"offensive" => "offensive",
+			"disgusting" => "disgusting",
+			"fake_tip" => "fake_tip",
+			"advertising" => "advertising",
+		];
+		// return AbuseCategory::orderBy('order')->pluck('shortcut','id')->toArray();
+	}
 }

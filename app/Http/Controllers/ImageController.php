@@ -23,12 +23,15 @@ class ImageController extends Controller
     public function index()
     {
         // @todo ajax
-        $images = $this->imageService->getImageByCategoryTypeShortcut('emoticon');
+        $images = $this->imageService->getImagesByCategoryTypeShortcut('emoticon');
+        $abuseCategories = $this->imageService->getAbuseCategories();
 
         return view('images.index', [
             'csrf' => csrf_token(),
             'selected' => 3 - 1,
             'data' => (new ListDataType('emoticon', $images)),
+            'abuseCategories' => (new ListDataType('abuse_category', $abuseCategories)),
+            // @todo css
             "emoticonAutocompleteDisplay" => "block",
             "emoticonPreviewDisplay" => "hide",
             "faceboxDisplay" => "hide",
