@@ -40,13 +40,14 @@ class ImageService
 	public function autocomplete(string $needle)
 	{
 		$images = Image::where('shortcut', 'LIKE', $needle . '%')->orderBy('shortcut')->get();
+		$host = request()->getSchemeAndHttpHost();
 
 		$data["slug"] = $needle;
 		$data["emoticons"] = [];
 		foreach($images as $image) {
 			$data["emoticons"][] = [
 				"slug" => $image->shortcut,
-				"url" => $image->src,
+				"url" => $host . $image->src,
 				"score" => 0,
 			];
 		}
