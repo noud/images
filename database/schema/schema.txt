@@ -59,12 +59,12 @@
                 "y": 15
             },
             "rchz4n": {
-                "x": 687,
-                "y": 500
+                "x": 689,
+                "y": 299
             },
             "v5e11l": {
-                "x": 660,
-                "y": 288
+                "x": 663,
+                "y": 481
             },
             "u8m7lb": {
                 "x": 51,
@@ -77,6 +77,14 @@
             "pw67v6": {
                 "x": 27,
                 "y": 21
+            },
+            "j0n7js": {
+                "x": 659,
+                "y": 709
+            },
+            "g7ti9j": {
+                "x": 339,
+                "y": 697
             }
         }
     },
@@ -134,6 +142,20 @@
             "id": "pw67v6",
             "name": "image_category_types",
             "color": "table-header-purple",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "j0n7js",
+            "name": "abuse_categories",
+            "color": "table-header-red",
+            "softDelete": false,
+            "timeStamp": true
+        },
+        {
+            "id": "g7ti9j",
+            "name": "abused_images",
+            "color": "table-header-blue",
             "softDelete": false,
             "timeStamp": true
         }
@@ -982,6 +1004,125 @@
                     }
                 }
             }
+        ],
+        "j0n7js": [
+            {
+                "id": "0dalkd",
+                "name": "id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "vavitp",
+                "name": "shortcut",
+                "type": "string",
+                "length": "11",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": false,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            }
+        ],
+        "g7ti9j": [
+            {
+                "id": "4xxaj9",
+                "name": "id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": true,
+                "nullable": false,
+                "unique": true,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "",
+                        "name": ""
+                    },
+                    "on": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            },
+            {
+                "id": "d6z6mm",
+                "name": "image_id",
+                "type": "bigInteger",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "ujzvtu",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "fnvue5",
+                        "name": "images"
+                    }
+                }
+            },
+            {
+                "id": "kadr2i",
+                "name": "abuse_category_id",
+                "type": "integer",
+                "length": "",
+                "defValue": "",
+                "comment": "",
+                "autoInc": false,
+                "nullable": false,
+                "unique": false,
+                "index": true,
+                "unsigned": true,
+                "foreignKey": {
+                    "references": {
+                        "id": "0dalkd",
+                        "name": "id"
+                    },
+                    "on": {
+                        "id": "j0n7js",
+                        "name": "abuse_categories"
+                    }
+                }
+            }
         ]
     },
     "relations": [
@@ -1063,6 +1204,26 @@
             "target": {
                 "columnId": "2o7nu",
                 "tableId": "u8m7lb"
+            }
+        },
+        {
+            "source": {
+                "columnId": "d6z6mm",
+                "tableId": "g7ti9j"
+            },
+            "target": {
+                "columnId": "ujzvtu",
+                "tableId": "fnvue5"
+            }
+        },
+        {
+            "source": {
+                "columnId": "kadr2i",
+                "tableId": "g7ti9j"
+            },
+            "target": {
+                "columnId": "0dalkd",
+                "tableId": "j0n7js"
             }
         }
     ]

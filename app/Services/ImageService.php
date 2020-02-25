@@ -33,11 +33,6 @@ class ImageService
 		return $images;
 	}       
 
-	public function getUploadables()
-	{
-		return ImageCategoryType::where('uploadable', true)->orderBy('shortcut')->pluck('shortcut','id')->toArray();
-	}
-
 	public function autocomplete(string $needle)
 	{
 		$images = Image::where('shortcut', 'LIKE', $needle . '%')->orderBy('shortcut')->get();
@@ -56,16 +51,15 @@ class ImageService
 		return $data;
 	}
 
+	// selects
+
+	public function getUploadables()
+	{
+		return ImageCategoryType::where('uploadable', true)->orderBy('shortcut')->pluck('shortcut','id')->toArray();
+	}
+
 	public function getAbuseCategories()
 	{
-		// @todo AbuseCategory
-		return [
-			"ignore" => "ignore",
-			"offensive" => "offensive",
-			"disgusting" => "disgusting",
-			"fake_tip" => "fake_tip",
-			"advertising" => "advertising",
-		];
-		// return AbuseCategory::orderBy('order')->pluck('shortcut','id')->toArray();
+		return AbuseCategory::orderBy('id')->pluck('shortcut','shortcut')->toArray();
 	}
 }
