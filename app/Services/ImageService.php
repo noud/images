@@ -35,5 +35,23 @@ class ImageService
 	public function getUploadables()
 	{
 		return ImageCategoryType::where('uploadable', true)->orderBy('shortcut')->pluck('shortcut','id')->toArray();
-	}       
+	}
+
+	public function autocomplete(string $needle)
+	{
+		$images = Image::where('shortcut', 'LIKE', $needle . '%')->orderBy('shortcut')->get();
+
+		$data["slug"] = $needle;
+		$data["emoticons"] = [];
+		foreach($images as $image) {
+			$data["emoticons"][] = [
+				"slug" => $image->shortcut,
+				"url" => $image->src,
+				"score" => 0,
+			];
+		}
+	
+		return $data;
+	}
+
 }

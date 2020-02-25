@@ -9,6 +9,7 @@ use App\Http\Requests\UploadRequest;
 use App\Models\Extension;
 use App\Models\Image;
 use App\Services\ImageService;
+use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
@@ -81,5 +82,11 @@ class ImageController extends Controller
         return view('images.upload_complete', [
             'data' => (new ImageDataType($image->shortcut, $image->src))
         ]);
+    }
+
+    public function autocomplete(Request $request)
+    {
+        $queryParam = $request->query('slug');
+        return $this->imageService->autocomplete($queryParam);
     }
 }
