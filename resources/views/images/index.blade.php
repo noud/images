@@ -5,9 +5,9 @@
 </head>
 @inject('imageService', 'App\Services\ImageService')
 <body>
-        <div class="chat-holder">
+        <div class="chat-holder" style="margin: 0 0 0 0px;"
                 <div class="chat-box">
-                <div class="chat-list" style="height: 540px; font-size: 9pt; display: block;"></div>
+                <div class="chat-list" style="height: 300px; font-size: 9pt; display: block;"></div>
                 <div style="display: block;" class="overlay_popup emote_popup">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
@@ -35,7 +35,7 @@
                         </table>
                 </div>
                 <div id="autocomplete_prefix" style="display: none; font: 100% Arial, Helvetica, sans-serif; width: auto;"></div>
-                <div id="emoticon_autocomplete" style="background: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(177, 177, 177) rgb(177, 177, 177) rgb(255, 255, 255); border-image: initial; cursor: pointer; float: left; font: 100% Arial, Helvetica, sans-serif; width: 260px; max-height: 290px; position: absolute; z-index: 99; top: 658.844px; left: 560.953px; display: {{$emoticonAutocompleteDisplay}};">
+                <div id="emoticon_autocomplete" style="background: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(177, 177, 177) rgb(177, 177, 177) rgb(255, 255, 255); border-image: initial; cursor: pointer; float: left; font: 100% Arial, Helvetica, sans-serif; width: 260px; max-height: 290px; position: absolute; z-index: 99; top: 16.844px; left: 0.953px; display: {{$emoticonAutocompleteDisplay}};">
                         <div id="emoticon_preview" style="height: 110px; line-height: 105px; text-align: center; border-bottom: 1px solid rgb(177, 177, 177); display: {{$emoticonPreviewDisplay}};">
                                 <a class="facebox_link thumbnail" href="#report_emoticon" rel="facebox">
                                         <input type="hidden" name="image_url" value="{{$data->collection[$selected]->src}}">
@@ -64,7 +64,7 @@
                                 @endforeach
                         </div>
                 </div>
-                <div id="facebox" style="top: 714.75px; left: 769.5px; display: {{$faceboxDisplay}};">
+                <div id="facebox" style="top: 84.75px; left: 169.5px; display: {{$faceboxDisplay}};">
                         <div class="popup">
                                 <div class="content">
                                         <div style="text-align: center;">
@@ -97,9 +97,7 @@
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                 <tbody>
                                                         <tr>
-                                                                <td><input id="chat_input" type="text"
-                                                                                class="text" autocomplete="off"
-                                                                                maxlength="1024"></td>
+                                                                <td><input id="chat_input" type="text" class="text" autocomplete="off" maxlength="1024"></td>
                                                                 <td width="1"></td>
                                                                 <td width="20">
                                                                         <a href="#"
