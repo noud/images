@@ -21,8 +21,8 @@
                                                 data-{{$data->shortcut}}=":{{$image->name}}">
                                         @endforeach
                                         </div>
-                                        <div class="more"><a
-                                                href="/emoticons">{!!__('data_types.'.$data->shortcut.'.button.submit')!!}</a>
+                                        <div class="more">
+                                                <a href="/emoticons" target=”_blank”>{!!__('data_types.'.$data->shortcut.'.link.upload')!!}</a>
                                         </div>
                                 </td>
                                 </tr>

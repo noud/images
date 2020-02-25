@@ -10,7 +10,7 @@ return [
     'button.send' => "SEND",
     //
     'emoticon' => "Standard Emoticons",
-    'emoticon.button.submit' => "Upload Emoticons &gt;&gt;",
+    'emoticon.link.upload' => "Upload Emoticons &gt;&gt;",
     //
     'upload_graphic' => "Upload Graphic",
     'upload_graphic.txt' => "To insert a custom emoticon or graphic into the chat room, upload an image URL. It will also be available to other users. Do not post anything copyrighted, illegal, inappropriate or offensive in nature.",
