@@ -20,6 +20,26 @@ class ImageController extends Controller
         $this->imageService = $imageService;
     }
 
+    public function index()
+    {
+        // @todo ajax
+        $images = $this->imageService->getImageByCategoryTypeShortcut('emoticon');
+
+        return view('images.index', [
+            'csrf' => csrf_token(),
+            'selected' => 3 - 1,
+            'data' => (new ListDataType('emoticon', $images)),
+            "emoticonAutocompleteDisplay" => "block",
+            "emoticonPreviewDisplay" => "hide",
+            "faceboxDisplay" => "hide",
+        ]);
+    }
+
+    public function reportAbuse()
+    {
+        return 'reported';
+    }
+
     public function popup()
     {
         $images = $this->imageService->getImageByCategoryTypeShortcut('emoticon');

@@ -18,7 +18,9 @@ Route::get('/', function () {
 Route::group(['as' => 'images.'], function () {
     Route::get('images/popup', 'ImageController@popup')->name('popup');
     Route::get('images/view/{image}', 'ImageController@uploadComplete')->name('upload_complete');
+    Route::get('images/index', 'ImageController@index')->name('index');
     Route::get('emoticons', 'ImageController@upload')->name('upload');
     Route::post('emoticons', 'ImageController@emoticons')->name('post');
+    Route::get('emoticon_report_abuse/{shortcut}', 'ImageController@reportAbuse')->name('report_abuse');
     Route::get('autocomplete', 'ImageController@autocomplete')->name('autocomplete');
 });

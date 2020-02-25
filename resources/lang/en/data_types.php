@@ -1,7 +1,13 @@
 <?php
 
 return [
-    'title' => "Chaturbate",
+    'title' => "Images",
+    //
+    'txt.view_report' => "VIEW / REPORT EMOTICON",
+    'link.report' => "REPORT EMOTICON",
+    'button.report' => "REPORT",
+    'button.cancel' => "CANCEL",
+    'button.send' => "SEND",
     //
     'emoticon' => "Standard Emoticons",
     'emoticon.button.submit' => "Upload Emoticons &gt;&gt;",
@@ -14,6 +20,10 @@ return [
     'upload_graphic.label.suggested_category' => "Suggested Category:",
     'upload_graphic.button.submit' => "Submit Image",
     'upload_graphic.error' => "Please correct the errors below.",
+    //
+    'upload_complete' => "Upload Graphic Complete",
+    'upload_complete.txt' => "Your emoticon has been uploaded. You may use it immediately, but it will not be listed in the directory until it is reviewed.",
+    'upload_complete.link' => "Use this emoticon now.",
     //
     'button_sprites' => "Button Sprites",
     'css' => "CSS",
