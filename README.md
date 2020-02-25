@@ -39,12 +39,16 @@ In the target project development environment this console command is part of th
     - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
         - [Facebox](https://github.com/NightOwl888/facebox)
         - [jQuery](https://jquery.com/)
-    - [PHP](https://en.wikipedia.org/wiki/PHP)
+    - [PHP: Hypertext Preprocessor (PHP)](https://en.wikipedia.org/wiki/PHP)
         - [Laravel](https://laravel.com)
-- [Cascading Style Sheets (CSS)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
-- [Web Open Font Format (WOFF)](https://en.wikipedia.org/wiki/Web_Open_Font_Format)
-    - [Ubuntu Font Family](https://github.com/earaujoassis/ubuntu-fontface)
+    - [SQL](https://en.wikipedia.org/wiki/SQL)
+        - [MySQL](https://www.mysql.com/)
 - [universally unique identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+- web
+    - [Hypertext Markup Language (HTML)](https://en.wikipedia.org/wiki/HTML)
+    - [Cascading Style Sheets (CSS)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - [Web Open Font Format (WOFF)](https://en.wikipedia.org/wiki/Web_Open_Font_Format)
+        - [Ubuntu Font Family](https://github.com/earaujoassis/ubuntu-fontface)
 
 ## Copyright & license
 
