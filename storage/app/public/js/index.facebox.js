@@ -58,7 +58,7 @@ $(document).ready(function () {
                 var img = $('.chat-list img[title="' + slug + '"]');
                 var facebox_img = $('#facebox').find('.content').find('img');
                 if (response == 'reported') {
-                    link.text('UNDO').before('<span>EMOTICON REPORTED - </span>');
+                    link.text('UNDO').before('<span class="pre_link">EMOTICON REPORTED - </span>');
                     img.hide();
                     if (img.parent().find('.emoticon_slug:visible').length == 0) {
                         img.parent().append('<span class="emoticon_slug">' + slug + '</span>');
