@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\AbuseCategory;
+use App\Models\AbusedImage;
 use App\Models\Image;
 use App\Models\ImageCategoryType;
 use Illuminate\Database\Eloquent\Builder;
@@ -61,5 +62,27 @@ class ImageService
 	public function getAbuseCategories()
 	{
 		return AbuseCategory::orderBy('id')->pluck('shortcut','shortcut')->toArray();
+	}
+
+	public function reportAbuse(string $shortcut, string $categoryShortcut)
+	{
+		$image = Image::where('shortcut', $shortcut)->first();
+		$category = AbuseCategory::where('shortcut', $categoryShortcut)->first();
+
+		$abusedImage = AbusedImage::where([
+			'image_id' => $image->id,
+			'abuse_category_id' => $category->id,
+		])->first();
+		
+		if (!$abusedImage) {
+			AbusedImage::create([
+				'image_id' => $image->id,
+				'abuse_category_id' => $category->id,
+			]);
+			return 'reported';
+		} else {
+			$abusedImage->delete();
+			return 'undone';
+		}
 	}
 }

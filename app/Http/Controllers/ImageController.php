@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTypes\ImageDataType;
 use App\DataTypes\ListDataType;
 use App\Events\MyEvent;
+use App\Http\Requests\ReportRequest;
 use App\Http\Requests\UploadRequest;
 use App\Models\Extension;
 use App\Models\Image;
@@ -38,9 +39,12 @@ class ImageController extends Controller
         ]);
     }
 
-    public function reportAbuse()
+    public function reportAbuse(ReportRequest $request, string $shortcut)
     {
-        return 'reported';
+        $formData = $request->validated();
+        $category = $formData['category'];
+
+        return $this->imageService->reportAbuse($shortcut, $category);
     }
 
     public function upload()

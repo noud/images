@@ -1,11 +1,12 @@
 <html>
 
 <head>
+        <title>{{__('data_types.title')}}</title>
         <link rel="stylesheet" href="/css/output.f48c2a3e41ca.css" type="text/css" media="all" />
 </head>
 @inject('imageService', 'App\Services\ImageService')
 <body>
-        <div class="chat-holder" style="margin: 0 0 0 0px;"
+        <div class="chat-holder" style="margin: 0 0 0 0px;">
                 <div class="chat-box">
                 <div class="chat-list" style="height: 300px; font-size: 9pt; display: block;"></div>
                 <div style="display: block;" class="overlay_popup emote_popup">
@@ -86,9 +87,8 @@
                                                         <div class="button_abuse_cancel"><a href="#">{{__('data_types.button.cancel')}}</a></div>
                                                 </div>
                                         </div>
-                                </div> <a href="#" class="close"><img
-                                                src="/facebox/closelabel.png"
-                                                class="close_image" title="close"></a>
+                                </div>
+                                <a href="#" class="close"><img src="/facebox/closelabel.png" class="close_image" title="close"></a>
                         </div>
                 </div>
                 <form action="#" class="chat-form" name="chat_form" autocomplete="off">
@@ -113,6 +113,7 @@
         </div>
 </body>
 <script type="text/javascript" src="/js/output.0b6371c03c92.js"></script>
+<script type="text/javascript" src="/js/index.facebox.js"></script>
 @include('scrapers.css_background_urls')
 @include('scrapers.css_font_urls')
 </html>
