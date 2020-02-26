@@ -107,6 +107,7 @@
 <script type="text/javascript" src="/js/output.0b6371c03c92.js"></script>
 <script type="text/javascript" src="/js/index.facebox.js"></script>
 <script type="text/javascript" src="/js/facebox.close.js"></script>
+<script type="text/javascript" src="/js/emoticon_button.js"></script>
 @include('scrapers.css_background_urls')
 @include('scrapers.css_font_urls')
 </html>
