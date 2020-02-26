@@ -40,12 +40,12 @@ $(document).ready(function () {
             $('#facebox .emoticon_abuse_categories').show();
         }
     });
-    $('.button_abuse_cancel').on('click', 'a', function (e) {
+    $('body').on('click', '.button_abuse_cancel a', function (e) {
         e.preventDefault();
         $(this).parent().parent().hide();
         $('#facebox .report_abuse_link').show();
     });
-    $('.button_abuse_report').on('click', 'a', function (e) {
+    $('body').on('click', '.button_abuse_report a', function (e) {
         e.preventDefault();
         $(this).parent().parent().hide();
         var link = $('#facebox .report_abuse_link');
@@ -81,7 +81,6 @@ $(document).ready(function () {
         });
         link.show();
     });
-
 
     function validateAbuseReportForm() {
         var category = $('#id_abuse_category_select').val();

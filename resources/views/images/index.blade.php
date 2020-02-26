@@ -65,32 +65,6 @@
                                 @endforeach
                         </div>
                 </div>
-                <div id="facebox" style="top: 84.75px; left: 169.5px; display: {{$faceboxDisplay}};">
-                        <div class="popup">
-                                <div class="content">
-                                        <div style="text-align: center;">
-                                                <img title=":fuckmybigasshole111"
-                                                        src="{{$data->collection[$selected]->src}}"
-                                                        style="max-width: 480px; max-height: 480px;"><br>
-                                                <a class="report_abuse_link"
-                                                        href="{{route('images.report_abuse', [$data->collection[$selected]->shortcut])}}">{{__('data_types.link.report')}}</a>
-                                                <div class="emoticon_abuse_categories" style="display: block;">
-                                                        <span id="{{$abuseCategories->shortcut}}_options">
-                                                                {{__($abuseCategories->shortcut.'.title')}}
-                                                                <select class="{{$abuseCategories->shortcut}}">
-                                                                        @foreach($abuseCategories->collection as $abuseCategory)
-                                                                        <option value="{{$abuseCategory}}">{{__($abuseCategories->shortcut.'.'.$abuseCategory)}}</option>
-                                                                        @endforeach
-                                                                </select>
-                                                        </span>
-                                                        <div class="button_abuse_report"><a href="#">{{__('data_types.button.report')}}</a></div>
-                                                        <div class="button_abuse_cancel"><a href="#">{{__('data_types.button.cancel')}}</a></div>
-                                                </div>
-                                        </div>
-                                </div>
-                                <a href="#" class="close"><img src="/facebox/closelabel.png" class="close_image" title="close"></a>
-                        </div>
-                </div>
                 <form action="#" class="chat-form" name="chat_form" autocomplete="off">
                         <fieldset>
                                 <div class="row">
@@ -111,9 +85,28 @@
                         </fieldset>
                 </form>
         </div>
+        <div id="report_emoticon" style="display: none">
+                <div style="text-align: center;">
+                        <img title="" src="" style="max-width: 480px; max-height: 480px;"><br>
+                        <a class="report_abuse_link" href="#"></a>
+                        <div class="emoticon_abuse_categories" style="display: none;">
+                                <span id="{{$abuseCategories->shortcut}}_options">
+                                        {{__($abuseCategories->shortcut.'.title')}}
+                                        <select class="{{$abuseCategories->shortcut}}">
+                                                @foreach($abuseCategories->collection as $abuseCategory)
+                                                <option value="{{$abuseCategory}}">{{__($abuseCategories->shortcut.'.'.$abuseCategory)}}</option>
+                                                @endforeach
+                                        </select>
+                                </span>
+                                <div class="button_abuse_report"><a href="#">{{__('data_types.button.report')}}</a></div>
+                                <div class="button_abuse_cancel"><a href="#">{{__('data_types.button.cancel')}}</a></div>
+                        </div>
+                </div>
+        </div>
 </body>
 <script type="text/javascript" src="/js/output.0b6371c03c92.js"></script>
 <script type="text/javascript" src="/js/index.facebox.js"></script>
+<script type="text/javascript" src="/js/facebox.close.js"></script>
 @include('scrapers.css_background_urls')
 @include('scrapers.css_font_urls')
 </html>
