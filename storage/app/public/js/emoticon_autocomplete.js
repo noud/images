@@ -1,9 +1,11 @@
 $('#emoticon_autocomplete').hide();
 $("#chat_input").on('keydown', function (e) {
-    var c = String.fromCharCode(e.which) 
+    var c = String.fromCharCode(e.which);
+    var text = $(this).val();
     // console.log(c);
+    // console.log(text);
     // console.log($('#emoticon_autocomplete').css('display'));
-    if (c === 'º' || $('#emoticon_autocomplete').css('display') === 'show') {
+    if (c === 'º' || text.indexOf(':') >= 0 || $('#emoticon_autocomplete').css('display') === 'show') {
         $('#emoticon_autocomplete').show();
     } else {
         $('#emoticon_autocomplete').hide();

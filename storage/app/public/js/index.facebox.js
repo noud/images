@@ -29,7 +29,6 @@ $(document).ready(function () {
         } else {
             abuse_link.text('REPORT EMOTICON');
         }
-
     });
     $('body').on('click', '.report_abuse_link', function (e) {
         e.preventDefault();
@@ -37,6 +36,10 @@ $(document).ready(function () {
             $('.button_abuse_report a').last().click();
         } else {
             $(this).hide();
+            $('#facebox').css({
+                top: 120,
+                left: 185 
+            });            
             $('#facebox .emoticon_abuse_categories').show();
         }
     });
