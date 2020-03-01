@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\DataTypes\ImageDataType;
 use App\DataTypes\ListDataType;
 use App\Events\MyEvent;
-use App\Http\Requests\ReportRequest;
 use App\Http\Requests\UploadRequest;
 use App\Models\Extension;
 use App\Models\Image;
@@ -29,7 +28,6 @@ class ImageController extends Controller
 
         return view('images.index', [
             'csrf' => csrf_token(),
-            'selected' => 3 - 1,
             'data' => (new ListDataType('emoticon', $images)),
             'abuseCategories' => (new ListDataType('abuse_category', $abuseCategories)),
             // @todo css
@@ -37,14 +35,6 @@ class ImageController extends Controller
             "emoticonPreviewDisplay" => "hide",
             "faceboxDisplay" => "hide",
         ]);
-    }
-
-    public function reportAbuse(ReportRequest $request, string $shortcut)
-    {
-        $formData = $request->validated();
-        $category = $formData['category'];
-
-        return $this->imageService->reportAbuse($shortcut, $category);
     }
 
     public function upload()

@@ -39,30 +39,17 @@
                 <div id="emoticon_autocomplete" style="background: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(177, 177, 177) rgb(177, 177, 177) rgb(255, 255, 255); border-image: initial; cursor: pointer; float: left; font: 100% Arial, Helvetica, sans-serif; width: 260px; max-height: 290px; position: absolute; z-index: 99; top: 16.844px; left: 0.953px; display: {{$emoticonAutocompleteDisplay}};">
                         <div id="emoticon_preview" style="height: 110px; line-height: 105px; text-align: center; border-bottom: 1px solid rgb(177, 177, 177); display: {{$emoticonPreviewDisplay}};">
                                 <a class="facebox_link thumbnail" href="#report_emoticon" rel="facebox">
-                                        <input type="hidden" name="image_url" value="{{$data->collection[$selected]->src}}">
-                                        <input type="hidden" name="report_url" value="{{route('emoticons.report_abuse', [$data->collection[$selected]->shortcut])}}">
+                                        <input type="hidden" name="image_url" value="">
+                                        <input type="hidden" name="report_url" value="">
                                         <img id="emoticon_image"
-                                                src="{{$data->collection[$selected]->src}}"
-                                                title=":{{$data->collection[$selected]->shortcut}}"
+                                                src=""
+                                                title=""
                                                 style="max-height: 80px; max-width: 250px; padding: 10px; vertical-align: middle;">
                                         <br>
                                         <span id="preview_text" style="font-size: 10px; position: relative; top: -55px;">{{__('data_types.txt.view_report')}}</span>
                                 </a>
                         </div>
                         <div id="emoticon_list" style="max-height: 180px; overflow: hidden scroll;">
-                                @foreach($data->collection as $key => $image)
-                                        @if($key === $selected)
-                                                <div class="emote_container selected" style="padding: 2px 8px; background-color: rgb(204, 204, 204);">
-                                                        <input type="hidden" class="img_src" value="{{$image->src}}">
-                                                        <span class="emote_name" style="margin-right: 16px;">{{$image->shortcut}}</span>
-                                                </div>
-                                        @else
-                                                <div class="emote_container" style="padding: 2px 8px; background-color: rgb(255, 255, 255);">
-                                                        <input type="hidden" class="img_src" value="{{$image->src}}">
-                                                        <span class="emote_name" style="margin-right: 16px;">{{$image->shortcut}}</span>
-                                                </div>
-                                        @endif
-                                @endforeach
                         </div>
                 </div>
                 <form action="#" class="chat-form" name="chat_form" autocomplete="off">
