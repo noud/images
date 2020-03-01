@@ -9,7 +9,7 @@
         <div class="chat-holder" style="margin: 0 0 0 0px;">
                 <div class="chat-box">
                 <div class="chat-list" style="height: 300px; font-size: 9pt; display: block;"></div>
-                <div style="display: block;" class="overlay_popup emote_popup">
+                <div style="display: hide;" class="overlay_popup emote_popup">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                                 <tr>
@@ -19,7 +19,7 @@
                                         @foreach($data->collection as $image)
                                         <img src="{{$image->src}}" title="{{$image->shortcut}}" class="{{$data->shortcut}}"
                                                 height="{{$image->height}}" width="{{$image->width}}"
-                                                data-{{$data->shortcut}}=":{{$image->name}}">
+                                                data-{{$data->shortcut}}=":{{$image->shortcut}}">
                                         @endforeach
                                         </div>
                                         <div class="more">
@@ -40,7 +40,7 @@
                         <div id="emoticon_preview" style="height: 110px; line-height: 105px; text-align: center; border-bottom: 1px solid rgb(177, 177, 177); display: {{$emoticonPreviewDisplay}};">
                                 <a class="facebox_link thumbnail" href="#report_emoticon" rel="facebox">
                                         <input type="hidden" name="image_url" value="{{$data->collection[$selected]->src}}">
-                                        <input type="hidden" name="report_url" value="{{route('images.report_abuse', [$data->collection[$selected]->shortcut])}}">
+                                        <input type="hidden" name="report_url" value="{{route('emoticons.report_abuse', [$data->collection[$selected]->shortcut])}}">
                                         <img id="emoticon_image"
                                                 src="{{$data->collection[$selected]->src}}"
                                                 title=":{{$data->collection[$selected]->shortcut}}"
@@ -73,9 +73,8 @@
                                                         <tr>
                                                                 <td><input id="chat_input" type="text" class="text" autocomplete="off" maxlength="1024"></td>
                                                                 <td width="1"></td>
-                                                                <td width="20">
-                                                                        <a href="#"
-                                                                                class="smile emoticon_button nooverlay">smile</a>
+                                                                <td height="0" width="20">
+                                                                        <a href="#" class="smile emoticon_button nooverlay">smile</a>
                                                                 </td>
                                                                 @include('chat.submit')
                                                         </tr>
@@ -88,7 +87,8 @@
         <div id="report_emoticon" style="display: none">
                 <div style="text-align: center;">
                         <img title="" src="" style="max-width: 480px; max-height: 480px;"><br>
-                        <a class="report_abuse_link" href="/autocomplete"></a>
+                        <a class="autocomplete_link" href="/autocomplete"></a>
+                        <a class="report_abuse_link" href="/emoticon_report_abuse"></a>
                         <div class="emoticon_abuse_categories" style="display: none;">
                                 <span id="{{$abuseCategories->shortcut}}_options">
                                         {{__($abuseCategories->shortcut.'.title')}}

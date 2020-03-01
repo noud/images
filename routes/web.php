@@ -20,11 +20,13 @@ Route::group(['as' => 'images.'], function () {
     Route::get('images/index', 'ImageController@index')->name('index');
     Route::get('emoticons', 'ImageController@upload')->name('upload');
     Route::post('emoticons', 'ImageController@emoticons')->name('post');
-    Route::post('emoticon_report_abuse/{shortcut}', 'ImageController@reportAbuse')->name('report_abuse');
 });
 
 // API
 
 Route::apiResource('emoticons', 'EmoticonsController');
 
-Route::post('autocomplete', 'API\EmoticonsController@autocomplete')->name('autocomplete');
+Route::group(['as' => 'emoticons.'], function () {
+    Route::post('autocomplete', 'API\EmoticonsController@autocomplete')->name('autocomplete');
+    Route::post('emoticon_report_abuse/{shortcut}', 'API\EmoticonsController@reportAbuse')->name('report_abuse');
+});

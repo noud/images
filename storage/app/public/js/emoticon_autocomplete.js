@@ -9,11 +9,11 @@ $("#chat_input").on('keydown', function (e) {
         if (shortcutPart.length > 0) {
             // e.preventDefault();
             
-            var abuse_link = $('.report_abuse_link');
-            var report_url = abuse_link.attr('href');
+            var autocomplete_link = $('.autocomplete_link');
+            var autocomplete_url = autocomplete_link.attr('href');
             $.ajax({
                 type: "POST",
-                url: report_url + '?slug=' + shortcutPart,
+                url: autocomplete_url + '?slug=' + shortcutPart,
                 success: function (response) {
                     console.log(response);
                 }
