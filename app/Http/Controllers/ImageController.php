@@ -97,10 +97,4 @@ class ImageController extends Controller
             'data' => (new ImageDataType($image->shortcut, $image->src))
         ]);
     }
-
-    public function autocomplete(Request $request)
-    {
-        $queryParam = $request->query('slug');
-        return $this->imageService->autocomplete($queryParam);
-    }
 }

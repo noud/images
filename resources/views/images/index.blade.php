@@ -88,7 +88,7 @@
         <div id="report_emoticon" style="display: none">
                 <div style="text-align: center;">
                         <img title="" src="" style="max-width: 480px; max-height: 480px;"><br>
-                        <a class="report_abuse_link" href="#"></a>
+                        <a class="report_abuse_link" href="/autocomplete"></a>
                         <div class="emoticon_abuse_categories" style="display: none;">
                                 <span id="{{$abuseCategories->shortcut}}_options">
                                         {{__($abuseCategories->shortcut.'.title')}}

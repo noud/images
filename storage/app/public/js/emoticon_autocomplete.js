@@ -2,10 +2,23 @@ $('#emoticon_autocomplete').hide();
 $("#chat_input").on('keydown', function (e) {
     var c = String.fromCharCode(e.which);
     var text = $(this).val();
-    // console.log(c);
-    // console.log(text);
-    // console.log($('#emoticon_autocomplete').css('display'));
-    if (c === 'º' || text.indexOf(':') >= 0 || $('#emoticon_autocomplete').css('display') === 'show') {
+    var escapePosition = text.indexOf(':');
+    var shortcutPart = text.substr(1);
+
+    if (c === 'º' || escapePosition >= 0 || $('#emoticon_autocomplete').css('display') === 'show') {
+        if (shortcutPart.length > 0) {
+            // e.preventDefault();
+            
+            var abuse_link = $('.report_abuse_link');
+            var report_url = abuse_link.attr('href');
+            $.ajax({
+                type: "POST",
+                url: report_url + '?slug=' + shortcutPart,
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        }
         $('#emoticon_autocomplete').show();
     } else {
         $('#emoticon_autocomplete').hide();
@@ -29,7 +42,8 @@ $(".emote_container").on('click', function (e) {
     $('#emoticon_image').attr('title',shortcut);
 
     var report_emoticon = $('#report_emoticon');
-    var abuse_link = $('.report_abuse_link');
     report_emoticon.find('img').attr({ 'src': src, 'title':  shortcut});
+
+    var abuse_link = $('.report_abuse_link');
     abuse_link.attr('href', report_url);
 });
