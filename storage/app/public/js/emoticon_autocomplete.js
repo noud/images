@@ -58,15 +58,19 @@ function autocompleteResponse(emoticons) {
     var html = "";
     emoticonList.children().remove();
     emoticons.map(function( emoticon ) {
-        htmlItem = addEmoticontoList(emoticon.slug, emoticon.url);
-        html += htmlItem;
+        html += addEmoticontoList(emoticon.slug, emoticon.url);
       });
       emoticonList.html(html);
       setEmoticon(emoticonList.children().first());
+      emoticonListLength = emoticonList.children().length;
+      totalListLength = 40;
+      for (i = emoticonListLength; i < totalListLength; i++) {
+        emoticonList.append(addEmoticontoList('', ''));
+      }
 }
 
 function addEmoticontoList(slug, url) {
-    return '<div class="emote_container selected" style="padding: 2px 8px; background-color: rgb(255, 255, 255);">' +
+    return '<div class="emote_container" style="padding: 2px 8px; background-color: rgb(255, 255, 255);">' +
         '<input type="hidden" class="img_src" value="' + url + '">' +
         '<span class="emote_name" style="margin-right: 16px;">' + slug + '</span\>' +
     '</div>';
