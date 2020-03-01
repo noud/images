@@ -4,9 +4,8 @@ $("#chat_input").on('keydown', function (e) {
     var text = $(this).val();
     var escapePosition = text.indexOf(':');
     var shortcutPart = text.substr(1);
-
     if (c === 'º' || escapePosition >= 0 || $('#emoticon_autocomplete').css('display') === 'show') {
-        if (shortcutPart.length > 0) {
+        if (shortcutPart.length >= 3) {
             // e.preventDefault();
             
             var autocomplete_link = $('.autocomplete_link');
@@ -16,6 +15,8 @@ $("#chat_input").on('keydown', function (e) {
                 url: autocomplete_url + '?slug=' + shortcutPart,
                 success: function (response) {
                     console.log(response);
+                    autocompleteResponse(response.emoticons);
+                    $('#emoticon_autocomplete').show();
                 }
             });
         }
@@ -25,14 +26,18 @@ $("#chat_input").on('keydown', function (e) {
     }
 });
 $(".emote_container").on('click', function (e) {
+    setEmoticon(emoticon);
+});
+
+function setEmoticon(emoticon) {
     $.each($('.emote_container'), function() {
-        $(this).css("background-color","rgb(255, 255, 255)");
+        $(emoticon).css("background-color","rgb(255, 255, 255)");
     });
-    $(this).css("background-color","rgb(204, 204, 204)");
-    $(this).addClass('selected');
-    var shortcut = $(this).text();
+    $(emoticon).css("background-color","rgb(204, 204, 204)");
+    $(emoticon).addClass('selected');
+    var shortcut = $(emoticon).text();
     shortcut = $.trim(shortcut);
-    var src = $(this).children(":first").val();
+    var src = $(emoticon).children(":first").val();
 
     $('input[name=image_url]').val(src);
     report_url = '/emoticon_report_abuse/'+shortcut;
@@ -45,5 +50,24 @@ $(".emote_container").on('click', function (e) {
     report_emoticon.find('img').attr({ 'src': src, 'title':  shortcut});
 
     var abuse_link = $('.report_abuse_link');
-    abuse_link.attr('href', report_url);
-});
+    abuse_link.append(report_url);
+}
+
+function autocompleteResponse(emoticons) {
+    var emoticonList = $('#emoticon_list');
+    var html = "";
+    emoticonList.children().remove();
+    emoticons.map(function( emoticon ) {
+        htmlItem = addEmoticontoList(emoticon.slug, emoticon.url);
+        html += htmlItem;
+      });
+      emoticonList.html(html);
+      setEmoticon(emoticonList.children().first());
+}
+
+function addEmoticontoList(slug, url) {
+    return '<div class="emote_container selected" style="padding: 2px 8px; background-color: rgb(255, 255, 255);">' +
+        '<input type="hidden" class="img_src" value="' + url + '">' +
+        '<span class="emote_name" style="margin-right: 16px;">' + slug + '</span\>' +
+    '</div>';
+}
